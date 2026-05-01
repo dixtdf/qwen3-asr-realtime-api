@@ -20,7 +20,8 @@
 #   AUTO_COMMIT_INTERVAL_SEC - Auto commit interval in seconds (default: 60.0)
 #   LOG_LEVEL                - Log level (default: info)
 
-ARG VLLM_VERSION=0.14.0
+ARG VLLM_VERSION=v0.20.0-cu129-ubuntu2404
+
 FROM vllm/vllm-openai:v${VLLM_VERSION}
 
 LABEL maintainer="dixtdf"
