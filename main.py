@@ -108,7 +108,7 @@ async def lifespan(app: FastAPI):
     logger.info("=" * 60)
     logger.info(f"Model: {os.getenv('QWEN3_ASR_MODEL_PATH', 'Qwen/Qwen3-ASR-0.6B')}")
     logger.info(f"GPU Memory: {os.getenv('GPU_MEMORY_UTILIZATION', '0.5')}")
-    logger.info(f"Server Port: {os.getenv('SERVER_PORT', '8080')}")
+    logger.info(f"Server Port: {os.getenv('SERVER_PORT', '28787')}")
     logger.info("=" * 60)
 
     app.state.asr_manager = ASRManager()
@@ -293,7 +293,7 @@ async def realtime_websocket(websocket: WebSocket):
 
 def run_server():
     host = os.getenv("SERVER_HOST", "0.0.0.0")
-    port = int(os.getenv("SERVER_PORT", "8080"))
+    port = int(os.getenv("SERVER_PORT", "28787"))
     log_level = os.getenv("LOG_LEVEL", "info")
 
     config = Config(

@@ -9,7 +9,7 @@ import websockets
 
 
 async def test_vad_mode():
-    uri = "ws://localhost:8080/api-ws/v1/realtime"
+    uri = "ws://localhost:28787/api-ws/v1/realtime"
 
     print(f"Connecting to {uri}...")
 

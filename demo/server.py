@@ -8,7 +8,7 @@ Features:
 3. Proxies WebSocket connections to local ASR server
 
 Usage:
-    python demo/server.py [--port 7860] [--asr-server ws://localhost:8080]
+    python demo/server.py [--port 7860] [--asr-server ws://localhost:28787]
 
 Then open http://localhost:7860 in your browser.
 """
@@ -237,7 +237,7 @@ def main():
     parser.add_argument("--host", default="0.0.0.0", help="Server host (default: 0.0.0.0)")
     parser.add_argument(
         "--asr-server",
-        default="ws://localhost:8080/api-ws/v1/realtime",
+        default="ws://localhost:28787/api-ws/v1/realtime",
         help="Local ASR server WebSocket URL",
     )
     args = parser.parse_args()

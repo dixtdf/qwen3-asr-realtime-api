@@ -9,7 +9,7 @@
 ```bash
 docker run -d \
   --gpus all --ipc host \
-  -p 8080:8080 \
+  -p 28787:28787 \
   -v ~/.cache/huggingface:/root/.cache/huggingface \
   -e QWEN3_ASR_MODEL_PATH=Qwen/Qwen3-ASR-0.6B \
   rookiezoe/qwen3-asr-realtime:latest
@@ -46,7 +46,7 @@ MODEL_DTYPE=auto  # auto/half/float16/bfloat16
 ### WebSocket
 
 ```
-ws://localhost:8080/api-ws/v1/realtime
+ws://localhost:28787/api-ws/v1/realtime
 ```
 
 ### HTTP
@@ -62,7 +62,7 @@ ws://localhost:8080/api-ws/v1/realtime
 import asyncio, base64, json, websockets
 
 async def recognize():
-    async with websockets.connect("ws://localhost:8080/api-ws/v1/realtime") as ws:
+    async with websockets.connect("ws://localhost:28787/api-ws/v1/realtime") as ws:
         await ws.recv()  # session.created
         
         # 配置 (Manual 模式)

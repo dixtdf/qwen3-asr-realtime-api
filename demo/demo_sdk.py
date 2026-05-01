@@ -40,7 +40,7 @@ load_dotenv()
 # ==================== 配置 ====================
 
 # 私有后端服务地址 (修改为你的服务地址)
-DEFAULT_WS_URL = "ws://localhost:8080/api-ws/v1/realtime"
+DEFAULT_WS_URL = "ws://localhost:28787/api-ws/v1/realtime"
 # DEFAULT_WS_URL = "wss://dashscope.aliyuncs.com/api-ws/v1/realtime"
 
 # API Key (私有服务通常不需要，但 SDK 要求提供，可以随便填)
@@ -584,7 +584,7 @@ def main():
   python demo_sdk.py --list-devices
 
   # VAD 模式 (使用默认音频设备)
-  python demo_sdk.py --mode vad --url ws://localhost:8080/api-ws/v1/realtime
+  python demo_sdk.py --mode vad --url ws://localhost:28787/api-ws/v1/realtime
 
   # VAD 模式 (指定音频设备)
   python demo_sdk.py --mode vad --device 2

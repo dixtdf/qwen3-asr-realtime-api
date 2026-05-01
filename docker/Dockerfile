@@ -9,7 +9,7 @@
 # Environment Variables:
 #   QWEN3_ASR_MODEL_PATH     - HuggingFace model ID or local path (default: Qwen/Qwen3-ASR-0.6B)
 #   SERVER_HOST              - Server bind address (default: 0.0.0.0)
-#   SERVER_PORT              - Server port (default: 8080)
+#   SERVER_PORT              - Server port (default: 28787)
 #   GPU_MEMORY_UTILIZATION   - GPU memory utilization 0.0-1.0 (default: 0.8)
 #   MAX_NEW_TOKENS           - Max tokens per inference (default: 64)
 #   MODEL_DTYPE              - Model dtype: auto/half/float16/bfloat16 (default: auto)
@@ -23,8 +23,8 @@
 ARG VLLM_VERSION=0.14.0
 FROM vllm/vllm-openai:v${VLLM_VERSION}
 
-LABEL maintainer="Rookie_Zoe <i@rookiezoe.com>"
-LABEL org.opencontainers.image.source="https://github.com/RookieZoe/qwen3-asr-realtime-api"
+LABEL maintainer="dixtdf"
+LABEL org.opencontainers.image.source="https://github.com/dixtdf/qwen3-asr-realtime-api"
 LABEL org.opencontainers.image.description="Qwen3-ASR Realtime WebSocket Server with vLLM backend"
 
 ENV DEBIAN_FRONTEND=noninteractive
@@ -73,6 +73,6 @@ RUN mkdir -p /app/models
 # Environment defaults
 ENV PYTORCH_ALLOC_CONF=expandable_segments:True
 
-EXPOSE 8080
+EXPOSE 28787
 
 ENTRYPOINT ["/docker-entrypoint.sh"]

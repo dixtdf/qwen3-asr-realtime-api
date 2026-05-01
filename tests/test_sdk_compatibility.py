@@ -19,7 +19,7 @@ import websockets
 class SDKCompatibilityTest:
     """Test suite for SDK compatibility"""
 
-    def __init__(self, uri="ws://localhost:8080/api-ws/v1/realtime"):
+    def __init__(self, uri="ws://localhost:28787/api-ws/v1/realtime"):
         self.uri = uri
         self.results = []
         self.events_received = []
@@ -333,7 +333,7 @@ async def main():
 
     parser = argparse.ArgumentParser(description="SDK Compatibility Test")
     parser.add_argument(
-        "--url", "-u", default="ws://localhost:8080/api-ws/v1/realtime", help="WebSocket URL"
+        "--url", "-u", default="ws://localhost:28787/api-ws/v1/realtime", help="WebSocket URL"
     )
 
     args = parser.parse_args()

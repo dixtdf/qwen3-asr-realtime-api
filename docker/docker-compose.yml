@@ -13,7 +13,7 @@ services:
     container_name: qwen3-asr-server
     ipc: host
     ports:
-      - '8080:8080'
+      - '28787:28787'
     environment:
       # Model configuration
       # Supports: HF model ID (Qwen/Qwen3-ASR-0.6B), absolute path (/models/xxx), or relative path (./models/xxx)
@@ -21,7 +21,7 @@ services:
 
       # Server settings
       - SERVER_HOST=0.0.0.0
-      - SERVER_PORT=8080
+      - SERVER_PORT=28787
 
       # vLLM settings
       - GPU_MEMORY_UTILIZATION=0.8
@@ -65,7 +65,7 @@ services:
               capabilities: [gpu]
     restart: unless-stopped
     healthcheck:
-      test: ['CMD', 'curl', '-f', 'http://localhost:8080/health']
+      test: ['CMD', 'curl', '-f', 'http://localhost:28787/health']
       interval: 30s
       timeout: 10s
       retries: 3
