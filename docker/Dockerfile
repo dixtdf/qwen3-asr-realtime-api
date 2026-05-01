@@ -7,7 +7,7 @@
 #   VLLM_VERSION - vLLM version (default: 0.14.0, MUST be 0.14.0 for qwen-asr compatibility)
 #
 # Environment Variables:
-#   QWEN3_ASR_MODEL_PATH     - HuggingFace model ID or local path (default: Qwen/Qwen3-ASR-1.7B)
+#   QWEN3_ASR_MODEL_PATH     - HuggingFace model ID or local path (default: Qwen/Qwen3-ASR-0.6B)
 #   SERVER_HOST              - Server bind address (default: 0.0.0.0)
 #   SERVER_PORT              - Server port (default: 8080)
 #   GPU_MEMORY_UTILIZATION   - GPU memory utilization 0.0-1.0 (default: 0.8)

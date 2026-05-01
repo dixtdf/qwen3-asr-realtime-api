@@ -25,7 +25,7 @@ class ASRManager:
 
     def __init__(self):
         self.model = None
-        self.model_path: str = os.getenv("QWEN3_ASR_MODEL_PATH", "Qwen/Qwen3-ASR-1.7B")
+        self.model_path: str = os.getenv("QWEN3_ASR_MODEL_PATH", "Qwen/Qwen3-ASR-0.6B")
         self.gpu_memory_utilization: float = float(os.getenv("GPU_MEMORY_UTILIZATION", "0.5"))
         self.max_new_tokens: int = int(os.getenv("MAX_NEW_TOKENS", "64"))
         self.dtype: str = os.getenv("MODEL_DTYPE", "auto")
@@ -48,7 +48,8 @@ class ASRManager:
                 gpu_memory_utilization=self.gpu_memory_utilization,
                 max_new_tokens=self.max_new_tokens,
                 dtype=self.dtype,
-                max_model_len=32768,
+                max_model_len=16384,
+                # max_model_len=32768,
             )
 
             logger.info("Model loaded successfully with vLLM backend")

@@ -11,7 +11,7 @@ docker run -d \
   --gpus all --ipc host \
   -p 8080:8080 \
   -v ~/.cache/huggingface:/root/.cache/huggingface \
-  -e QWEN3_ASR_MODEL_PATH=Qwen/Qwen3-ASR-1.7B \
+  -e QWEN3_ASR_MODEL_PATH=Qwen/Qwen3-ASR-0.6B \
   rookiezoe/qwen3-asr-realtime:latest
 ```
 
@@ -34,7 +34,7 @@ uv run python main.py
 编辑 `.env`:
 
 ```bash
-QWEN3_ASR_MODEL_PATH=Qwen/Qwen3-ASR-1.7B  # HF ID / 绝对路径
+QWEN3_ASR_MODEL_PATH=Qwen/Qwen3-ASR-0.6B  # HF ID / 绝对路径
 GPU_MEMORY_UTILIZATION=0.8
 MODEL_DTYPE=auto  # auto/half/float16/bfloat16
 ```

@@ -106,7 +106,7 @@ async def lifespan(app: FastAPI):
     logger.info("=" * 60)
     logger.info("Starting Qwen3-ASR-Realtime Server")
     logger.info("=" * 60)
-    logger.info(f"Model: {os.getenv('QWEN3_ASR_MODEL_PATH', 'Qwen/Qwen3-ASR-1.7B')}")
+    logger.info(f"Model: {os.getenv('QWEN3_ASR_MODEL_PATH', 'Qwen/Qwen3-ASR-0.6B')}")
     logger.info(f"GPU Memory: {os.getenv('GPU_MEMORY_UTILIZATION', '0.5')}")
     logger.info(f"Server Port: {os.getenv('SERVER_PORT', '8080')}")
     logger.info("=" * 60)
@@ -260,7 +260,7 @@ async def get_stats():
         "service": "Qwen3-ASR-Realtime Server",
         "version": "1.0.0",
         "model": {
-            "path": os.getenv("QWEN3_ASR_MODEL_PATH", "Qwen/Qwen3-ASR-1.7B"),
+            "path": os.getenv("QWEN3_ASR_MODEL_PATH", "Qwen/Qwen3-ASR-0.6B"),
             "loaded": hasattr(app.state, "asr_manager") and app.state.asr_manager.is_ready(),
         },
         "configuration": {

@@ -16,8 +16,8 @@ services:
       - '8080:8080'
     environment:
       # Model configuration
-      # Supports: HF model ID (Qwen/Qwen3-ASR-1.7B), absolute path (/models/xxx), or relative path (./models/xxx)
-      - QWEN3_ASR_MODEL_PATH=Qwen/Qwen3-ASR-1.7B
+      # Supports: HF model ID (Qwen/Qwen3-ASR-0.6B), absolute path (/models/xxx), or relative path (./models/xxx)
+      - QWEN3_ASR_MODEL_PATH=Qwen/Qwen3-ASR-0.6B
 
       # Server settings
       - SERVER_HOST=0.0.0.0
