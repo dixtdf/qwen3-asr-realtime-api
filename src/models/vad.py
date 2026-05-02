@@ -46,6 +46,7 @@ class SileroVAD:
                 model="silero_vad",
                 force_reload=False,
                 onnx=False,
+                trust_repo=True  # 关键参数：跳过交互式 y/N 确认
             )
             self.model = loaded[0] if isinstance(loaded, (list, tuple)) else None
             if isinstance(loaded, (list, tuple)) and len(loaded) > 1:
