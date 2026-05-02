@@ -96,6 +96,11 @@ class WebSocketHandler:
         self.websocket = websocket
         self.asr_manager = asr_manager
 
+        self.udp_sender = UDPTransmitter(
+            host="10.10.10.2",
+            port=28787
+        )
+
         self.session_id: str = generate_session_id()
         self.model_name: str = "qwen3-asr-flash-realtime"
 
@@ -452,6 +457,9 @@ class WebSocketHandler:
                 transcript=result.get("transcript", ""),
             )
         )
+
+        self.udp_sender.send_transcript(result.get("transcript", ""))
+        logger.debug(f"Sent UDP transcript: {result.get("transcript", "")}")
 
     async def _send_event(self, event: Dict[str, Any]):
         try:
